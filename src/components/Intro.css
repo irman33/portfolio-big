@@ -1,0 +1,6 @@
+.section-intro {
+  min-width: 100%;
+  min-height: calc(90vh);
+  background: #f3c130;
+  overflow: hidden;
+}

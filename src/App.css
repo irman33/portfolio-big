@@ -1,0 +1,31 @@
+:root {
+  --main-red-color: #d0221b;
+
+  --main-bg-color: #000000;
+  --content-bg-color: #c5c9b3;
+  --action-color: #d0221b;
+  --contrast-color: #ffffff;
+
+  /* Olive Theme
+   --main-bg-color: #585e66;
+  --content-bg-color: #c5c9b3;
+  --action-color: #2e3747;
+  --contrast-color: #dbcfa7; 
+  
+  Intro:
+  background-color: var(--main-bg-color);
+  background: linear-gradient(
+    to bottom,
+    rgba(88, 94, 102, 1) 0%,
+    rgba(197, 201, 179, 1) 100%
+  );*/
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 50px;
+}
+
+.site-wrapper {
+  margin: 50px;
+}
