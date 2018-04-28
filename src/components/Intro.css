@@ -4,3 +4,12 @@
   background: #f3c130;
   overflow: hidden;
 }
+
+@media all and (max-width: 680px) {
+  .section-intro {
+    min-width: 100%;
+    min-height: calc(100vh);
+    background: #f3c130;
+    overflow: hidden;
+  }
+}

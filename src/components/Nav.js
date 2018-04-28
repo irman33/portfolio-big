@@ -24,29 +24,29 @@ class Nav extends Component {
           <h1>Ir</h1>
           <h1>man</h1>
         </div>
-        <div className="nav__right">
-          <div className="nav__hamburger" onClick={this.toggleMenu}>
-            <div className="nav__ham1" />
-            <div className="nav__ham2" />
-            <div className="nav__ham3" />
-          </div>
-        </div>
         <div className="nav__menu">
-          <div className="nav__close" onClick={this.toggleMenu}>
-            <div className="nav__x1" />
-            <div className="nav__x2" />
-          </div>
           <ul>
             <li>
-              <a href="">About</a>
+              <h1>
+                <a href="">About</a>
+              </h1>
             </li>
             <li>
-              <a href="">Projects</a>
+              <h1>
+                <a href="">Projects</a>
+              </h1>
             </li>
             <li>
-              <a href="">Contact</a>
+              <h1>
+                <a href="">Contact</a>
+              </h1>
             </li>
           </ul>
+        </div>
+        <div className="nav__hamburger" onClick={this.toggleMenu}>
+          <div className="nav__ham1" />
+          <div className="nav__ham2" />
+          <div className="nav__ham3" />
         </div>
       </nav>
     );

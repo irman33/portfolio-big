@@ -10,8 +10,9 @@ nav {
   /* border: solid 1px red; */
 }
 
-nav .nav__logo {
+.nav__logo {
   position: relative;
+  top: 20px;
   margin-left: 5vw;
   display: flex;
   flex-direction: column;
@@ -21,38 +22,40 @@ nav .nav__logo {
   width: 85px;
   background: #000000;
   color: #ffffff;
-  padding: 5px 6px 5px 10px;
+  padding: 5px 5px 5px 10px;
 }
-nav .nav__logo h1 {
+
+.nav__logo h1 {
   margin: 0;
   line-height: 1;
   text-transform: uppercase;
 }
 
-nav .nav__menu {
+.nav__menu {
   display: flex;
   flex-direction: row;
   margin-right: 5vh;
 }
 
-nav .nav__menu ul {
+.nav__menu ul {
   margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-nav .nav__menu li {
+
+.nav__menu li {
   margin: 0 20px;
   list-style: none;
 }
 
-nav .nav__menu a {
+.nav__menu a {
   color: #000000;
   text-decoration: none;
 }
 
-nav .nav__menu a:hover {
+.nav__menu a:hover {
   color: #000000;
   text-decoration: none;
 }
@@ -63,9 +66,8 @@ nav .nav__menu a:hover {
   align-self: center;
   align-items: flex-end;
   justify-content: center;
-  transition: all 0.4s cubic-bezier(0.25, 0.1, 0, 1.26);
   opacity: 1;
-  padding-right: 20px;
+  padding-right: 5px;
 }
 
 .nav__close {
@@ -75,43 +77,19 @@ nav .nav__menu a:hover {
 .nav__ham1,
 .nav__ham2,
 .nav__ham3 {
-  width: 35px;
-  height: 5px;
-  background-color: var(--action-color);
+  width: 30px;
+  height: 3px;
+  background-color: var(--text-color);
   margin: 3px 0;
-  border-radius: 0 5px 0 5px;
+  transition: all 0.4s cubic-bezier(0.25, 0.1, 0, 1.26);
+  transform: rotate(0deg);
 }
 .nav__ham1 {
-  width: 40px;
+  width: 35px;
 }
 
 .nav__ham2 {
-  width: 30px;
-}
-
-.nav__x1,
-.nav__x2 {
-  height: 5px;
-  background-color: var(--action-color);
-  margin: 3px 0;
-  border-radius: 0 5px 0 5px;
-  transition: all 400ms ease 400ms;
-  animation-delay: 1s;
-}
-
-.nav__x1 {
-  width: 40px;
-}
-.nav__x2 {
-  width: 35px;
-}
-
-.nav--open .nav__x1 {
-  transform: rotate(45deg);
-}
-
-.nav--open .nav__x2 {
-  transform: rotate(-45deg);
+  width: 25px;
 }
 
 .nav__close {
@@ -125,65 +103,90 @@ nav .nav__menu a:hover {
   nav {
     margin-bottom: 0;
   }
-  .nav__menu {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    right: -100vw;
-    background: rgba(0, 0, 0, 0.8);
-    transition: all 0.4s cubic-bezier(0.25, 0.1, 0, 1.26);
-  }
 
-  .nav__right {
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .nav__title h2 {
-    display: block;
-  }
-  .nav__right h2 {
-    display: none;
+  .nav__logo {
+    top: 10px;
   }
 
   .nav__hamburger {
     display: flex;
     position: fixed;
+    right: 0;
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0, 1.26);
     z-index: 1000;
   }
 
-  .nav--open .nav__hamburger {
-    transform: translateX(-100vw);
-    opacity: 0;
+  .nav--open .nav__ham1 {
+    margin: 0;
+    transform-origin: top;
+    transform: rotate(-45deg);
   }
 
-  .nav__close {
-    display: block;
+  .nav--open .nav__ham2 {
+    height: 0;
+  }
+
+  .nav--open .nav__ham3 {
+    margin: 0;
+    transform-origin: top;
+    transform: rotate(45deg);
+  }
+
+  .nav__menu {
+    position: absolute;
+    margin: 0;
+    top: 85px;
+    /* right: -100vh; */
+    display: flex;
+    /* height: calc(100vh - 85px); */
+    height: 0;
+    width: calc(100vw - 50px);
+    position: fixed;
+    background: var(--main-bg-color);
+    transition: all 0.4s cubic-bezier(0.25, 0.1, 0, 1.26);
   }
 
   .nav--open .nav__menu {
-    right: 0vw;
+    /* right: calc(0vw + 50px); */
+    height: calc(100vh - 85px);
   }
 
   .nav__menu ul {
     display: flex;
+    margin: 0;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-start;
-    margin-top: 100px;
+    margin-left: 5vw;
+    display: flex;
+    width: 85px;
+    background: #000000;
+    padding: 0;
   }
 
-  .nav--open .nav__menu ul {
+  .nav--open ul {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
     justify-content: flex-start;
-    margin-top: 100px;
+    align-items: flex-start;
+    padding-top: 100px;
   }
 
   .nav__menu li {
-    padding: 20px;
+    margin: 0;
+    position: relative;
+    left: -100vw;
+    width: 85px;
+    color: #ffffff;
+    opacity: 0;
+    padding: 20px 0 20px 0;
+    text-transform: uppercase;
+    transition: left 0.4s cubic-bezier(0.25, 0.1, 0, 1.26);
+  }
+
+  .nav--open li {
+    /* right: calc(0vw + 50px); */
+    left: 90px;
+    opacity: 1;
+  }
+  .nav__menu li a {
+    color: #000000;
   }
 }
